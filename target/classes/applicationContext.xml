@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="user1" class="com.penghui.beanFacoryPostProcessorTest.entity.User" scope="singleton" lazy-init="true">
+        <property name="password" value="123123"></property>
+        <property name="username" value="LINJIE"></property>
+        <property name="order" ref="order"></property>
+        <property name="address" ref="address"></property>
+    </bean>
+
+    <bean id="order" class="com.penghui.beanFacoryPostProcessorTest.entity.Order">
+        <property name="orderId" value="orderId"></property>
+        <property name="orderName" value="orderName"></property>
+    </bean>
+
+    <bean id="address" class="com.penghui.beanFacoryPostProcessorTest.entity.Address">
+        <property name="detail" value="detail"></property>
+        <property name="jiedao" value="jiedao"></property>
+        <property name="chengqu" value="chengqu"></property>
+    </bean>
+
+
+    <bean id="myBeanFactoryPostProcessor"
+          class="com.penghui.beanFacoryPostProcessorTest.beanFactoryPostProcess.MyBeanFactoryPostProcessor"></bean>
+
+    <bean id="myBeanPostProcessor"
+          class="com.penghui.beanFacoryPostProcessorTest.beanPostProcessor.MyBeanPostProcessor"></bean>
+
+    <!--<bean id="myListener" class="com.penghui.beanFacoryPostProcessorTest.listener.MyListener"></bean>-->
+    <!--<bean id="myBeanFactory" class="com.penghui.beanFacoryPostProcessorTest.beanFactory.MyBeanFactory"></bean>-->
+
+    <!--<bean id="myFactoryBean" class="com.penghui.beanFacoryPostProcessorTest.factoryBean.MyFactoryBean"></bean>-->
+
+    <bean id="applicationContextAware" class="com.penghui.beanFacoryPostProcessorTest.applicationContext.MyApplicationContextAware"></bean>
+</beans>
